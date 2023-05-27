@@ -12,4 +12,9 @@ public class MenuController : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene(2);
+    }
 }
