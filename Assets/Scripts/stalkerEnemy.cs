@@ -7,8 +7,6 @@ public class StalkerEnemy : MonoBehaviour
     [SerializeField] public GameObject focus;
     [SerializeField] public float delay;
     [SerializeField] public float velocidade;
-    //[SerializeField] public double x = 0f;
-    //[SerializeField] public float y = 0f;
 
     double x = 0f;
     float y = 0f;
@@ -20,6 +18,21 @@ public class StalkerEnemy : MonoBehaviour
     float subx = 0;
     float suby = 0;
 
+    public int vida = 100;
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.gameObject.tag == "bullet")
+        {
+            Destroy(other.gameObject);
+            vida -= Random.Range(20, 30);
+        }
+        if(vida < 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,10 +42,6 @@ public class StalkerEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Time.time - tempo);
-        //Debug.Log(transform.position.x);
-        //Debug.Log(transform.position.y);
-
         if (Time.time - tempo > delay)
         {
             tempo = Time.time;

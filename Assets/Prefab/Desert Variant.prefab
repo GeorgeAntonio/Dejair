@@ -68,6 +68,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Desert Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6678449394383696492, guid: aab94af22d0ef4f439e2d8567f136025, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 651872b703419194692f7159d610de20, type: 3}
+    - target: {fileID: 6678449394383696492, guid: aab94af22d0ef4f439e2d8567f136025, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
