@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
- 
+
+[RequireComponent(typeof(AudioSource))]
+
 public class LevelMove_Ref : MonoBehaviour
 {
     public int sceneBuildIndex;
- 
+
+    AudioSource somDaPorta;
+
+    private void Start()
+    {
+        somDaPorta = GetComponent<AudioSource>();
+    }
+
     // Level move zoned enter, if collider is a player
     // Move game to another scene
     private void OnTriggerEnter2D(Collider2D other) {
@@ -16,6 +25,7 @@ public class LevelMove_Ref : MonoBehaviour
         // Tags work too. Maybe some players have different script components?
         if(other.tag == "Player") {
             // Player entered, so move level
+            somDaPorta.Play(0);
             print("Switching Scene to " + sceneBuildIndex);
             SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
         }

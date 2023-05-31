@@ -8,12 +8,10 @@ public class StalkerEnemy : MonoBehaviour
     [SerializeField] public float delay;
     [SerializeField] public float velocidade;
 
+
     double x = 0f;
     float y = 0f;
     float tempo = 0f;
-
-    float proporcao = 0;
-    bool catched = false;
 
     float subx = 0;
     float suby = 0;
@@ -42,19 +40,20 @@ public class StalkerEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - tempo > delay)
+        Debug.Log( GameObject.FindGameObjectsWithTag("Player").Length != 0 );
+        if (GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
-            tempo = Time.time;
-            x = Mathf.Sqrt(Mathf.Pow((focus.transform.position.x - transform.position.x), 2));
-            y = Mathf.Sqrt(Mathf.Pow((focus.transform.position.y - transform.position.y), 2));
+            focus = GameObject.FindGameObjectsWithTag("useless")[0];
+            Debug.Log("fodase");
+        }
+        else
+        {
+            if (Time.time - tempo > delay)
+            {
+                tempo = Time.time;
+                x = Mathf.Sqrt(Mathf.Pow((focus.transform.position.x - transform.position.x), 2));
+                y = Mathf.Sqrt(Mathf.Pow((focus.transform.position.y - transform.position.y), 2));
 
-            if (x == 0 && y == 0)
-            {
-                catched = true;
-                proporcao = 1f;
-            }
-            else
-            {
                 if (y == 0)
                 {
                     y += 0.01f;
@@ -239,7 +238,7 @@ public class StalkerEnemy : MonoBehaviour
 
                 //Vector2 movimento = new Vector2(transform.position.x + (subx/100), transform.position.y + (suby/100));
                 //Vector2 movimento = new Vector2( subx, suby );
-                transform.Translate(subx/10, suby/10, 0);
+                transform.Translate(subx / 10, suby / 10, 0);
                 //transform.position = movimento * Time.deltaTime;
                 //Debug.Log(movimento);
             }
