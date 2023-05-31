@@ -13,12 +13,31 @@ public class Player : MonoBehaviour
 
     public Animator anim;
     public float speed;
+    public int vidaHeroi = 100;
 
-    
-    
+    float tempo = 0;
+    float delay = 0.5f;
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            if (Time.time - tempo > delay)
+            {
+                tempo = Time.time;
+                vidaHeroi -= 10;
+                if (vidaHeroi <= 0)
+                {
+                    Destroy(gameObject);
+                }
+            }
+        }
+    }
+
     private void Start(){
         playerRb = GetComponent<Rigidbody2D>();
         //playerAnimator = GetComponent<Animator>();
+        //GameObject.FindGameObjectsWithTag("Player");
     }
 
 
