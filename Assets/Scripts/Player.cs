@@ -1,19 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //[SerializeField] private float moveSpeed;
-
-    private Rigidbody2D playerRb;
-    //private Animator playerAnimator;
     private bool facingRight = true;
-    //private Vector2 moveVector;
 
     public Animator anim;
     public float speed;
-    public int vidaHeroi = 100;
 
     float tempo = 0;
     float delay = 0.5f;
@@ -25,8 +18,10 @@ public class Player : MonoBehaviour
             if (Time.time - tempo > delay)
             {
                 tempo = Time.time;
-                vidaHeroi -= 10;
-                if (vidaHeroi <= 0)
+                GameController gameController = FindObjectOfType<GameController>();
+                int life = gameController.getLife() - 10;
+                gameController.setLife(life);
+                if (life <= 0)
                 {
                     Destroy(gameObject);
                 }
@@ -34,18 +29,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Start(){
-        playerRb = GetComponent<Rigidbody2D>();
-        //playerAnimator = GetComponent<Animator>();
-        //GameObject.FindGameObjectsWithTag("Player");
-    }
-
-
     // Update is called once per frame
     void Update()
     {
         HandleInput();
-        //HandleAnimation();
         
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
 
@@ -57,10 +44,7 @@ public class Player : MonoBehaviour
         
     }
 
-    private void HandleInput(){
-        //moveVector.x = Input.GetAxisRaw("Horizontal");
-        //moveVector.y = Input.GetAxisRaw("Vertical");
-        
+    private void HandleInput(){      
         Vector2 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         if(dir.x > 0 && !facingRight || dir.x < 0 && facingRight){
             Flip();
@@ -71,13 +55,4 @@ public class Player : MonoBehaviour
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-    
-    /*private void HandleAnimation(){
-        playerAnimator.SetFloat("Speed", Mathf.Abs(moveVector.x) + Mathf.Abs(moveVector.y));
-    }
-
-    private void FixedUpdate(){
-        Vector2 _velocity = moveVector.normalized * moveSpeed;
-        playerRb.velocity = _velocity;
-    }*/
 }

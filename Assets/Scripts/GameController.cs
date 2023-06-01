@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +10,12 @@ public class GameController : MonoBehaviour
     public GameObject pauseMenuCanvas;
     public GameObject eventSystem;
     public static GameController instance = null;
+    public TextMeshProUGUI LevelTextMeshPro;
+    public TextMeshProUGUI LifeTextMeshPro;
+    public GameObject player;
+
+    private int level = 1;
+    private int life = 100;
 
     void Start()
     {
@@ -24,6 +30,8 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(pauseMenuCanvas);
         DontDestroyOnLoad(eventSystem);
+
+        LevelTextMeshPro.text = "Level " + level;
     }
 
     void Update()
@@ -59,5 +67,23 @@ public class GameController : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+    }
+
+    public int getLife()
+    {
+        return life;
+    }
+
+    public void setLife(int newLife)
+    {
+        life = newLife;
+        LifeTextMeshPro.text = life.ToString();
+    }
+
+    public void GoToLevel(int newLevel)
+    {
+        level = newLevel;
+        SceneManager.LoadScene(level, LoadSceneMode.Single);
+        LevelTextMeshPro.text = "Level " + level;
     }
 }
