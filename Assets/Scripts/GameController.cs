@@ -78,6 +78,13 @@ public class GameController : MonoBehaviour
     {
         life = newLife;
         LifeTextMeshPro.text = life.ToString();
+        if (life <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+            Destroy(gameObject);
+            Destroy(pauseMenuCanvas);
+            Destroy(eventSystem);
+        }
     }
 
     public void GoToLevel(int newLevel)

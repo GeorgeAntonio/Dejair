@@ -21,10 +21,6 @@ public class Player : MonoBehaviour
                 GameController gameController = FindObjectOfType<GameController>();
                 int life = gameController.getLife() - 10;
                 gameController.setLife(life);
-                if (life <= 0)
-                {
-                    Destroy(gameObject);
-                }
             }
         }
     }
