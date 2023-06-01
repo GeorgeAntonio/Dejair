@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //[SerializeField] private float moveSpeed;
-
     private Rigidbody2D playerRb;
-    //private Animator playerAnimator;
     private bool facingRight = true;
-    //private Vector2 moveVector;
 
     public Animator anim;
     public float speed;
+    public float boostedSpeed;
     public int vidaHeroi = 100;
 
     float tempo = 0;
@@ -34,50 +31,38 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Start(){
+    private void Start()
+    {
         playerRb = GetComponent<Rigidbody2D>();
-        //playerAnimator = GetComponent<Animator>();
-        //GameObject.FindGameObjectsWithTag("Player");
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         HandleInput();
-        //HandleAnimation();
-        
+
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
 
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Vertical", movement.y);
         anim.SetFloat("Speed", movement.magnitude);
 
-        transform.position = transform.position + movement * speed * Time.deltaTime;
-        
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? boostedSpeed : speed;
+        movement = movement.normalized * currentSpeed * Time.deltaTime;
+        playerRb.MovePosition(transform.position + movement);
     }
 
-    private void HandleInput(){
-        //moveVector.x = Input.GetAxisRaw("Horizontal");
-        //moveVector.y = Input.GetAxisRaw("Vertical");
-        
+    private void HandleInput()
+    {
         Vector2 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        if(dir.x > 0 && !facingRight || dir.x < 0 && facingRight){
+        if (dir.x > 0 && !facingRight || dir.x < 0 && facingRight)
+        {
             Flip();
         }
     }
-    
-    private void Flip(){
+
+    private void Flip()
+    {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
-    
-    /*private void HandleAnimation(){
-        playerAnimator.SetFloat("Speed", Mathf.Abs(moveVector.x) + Mathf.Abs(moveVector.y));
-    }
-
-    private void FixedUpdate(){
-        Vector2 _velocity = moveVector.normalized * moveSpeed;
-        playerRb.velocity = _velocity;
-    }*/
 }
