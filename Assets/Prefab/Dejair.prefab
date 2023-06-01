@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 2217292314619776333}
   - component: {fileID: 6034101246721823925}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Dejair
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
