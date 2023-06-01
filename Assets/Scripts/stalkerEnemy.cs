@@ -7,7 +7,7 @@ public class StalkerEnemy : MonoBehaviour
     [SerializeField] public GameObject focus;
     [SerializeField] public float delay;
     [SerializeField] public float velocidade;
-
+    private Animator anim;
 
     double x = 0f;
     float y = 0f;
@@ -40,6 +40,8 @@ public class StalkerEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim = GetComponent <Animator>();
+        anim.SetBool("isRunning", true);
         Debug.Log( GameObject.FindGameObjectsWithTag("Player").Length != 0 );
         if (GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
@@ -48,6 +50,7 @@ public class StalkerEnemy : MonoBehaviour
         }
         else
         {
+            anim.SetBool("isRunning", true);
             if (Time.time - tempo > delay)
             {
                 tempo = Time.time;
@@ -243,5 +246,12 @@ public class StalkerEnemy : MonoBehaviour
                 //Debug.Log(movimento);
             }
         }
+    }
+    
+    private void flip()
+    {
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
