@@ -3,10 +3,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private Rigidbody2D playerRb;
     private bool facingRight = true;
 
     public Animator anim;
     public float speed;
+    public float boostedSpeed;
+    public int vidaHeroi = 100;
 
     float tempo = 0;
     float delay = 0.5f;
@@ -25,29 +28,36 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        playerRb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
         HandleInput();
-        
+
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
 
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Vertical", movement.y);
         anim.SetFloat("Speed", movement.magnitude);
 
-        transform.position = transform.position + movement * speed * Time.deltaTime;
-        
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? boostedSpeed : speed;
+        movement = movement.normalized * currentSpeed * Time.deltaTime;
+        playerRb.MovePosition(transform.position + movement);
     }
 
     private void HandleInput(){      
         Vector2 dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        if(dir.x > 0 && !facingRight || dir.x < 0 && facingRight){
+        if (dir.x > 0 && !facingRight || dir.x < 0 && facingRight)
+        {
             Flip();
         }
     }
-    
-    private void Flip(){
+
+    private void Flip()
+    {
         facingRight = !facingRight;
         transform.Rotate(0f, 180f, 0f);
     }
