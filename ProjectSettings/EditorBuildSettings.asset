@@ -18,15 +18,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2.unity
     guid: e6ae98046ed6d3c4f98c43f07ddb0c32
   - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 954bcf872313d064e97f58cde6e26995
-  - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 8ca0f56ebf6f10f45b21c985c3d0e9f7
-  - enabled: 1
     path: Assets/Scenes/Bending.unity
     guid: 1baad80e570099d48b2b1751acf609d4
   - enabled: 1
     path: Assets/Scenes/TrueEnding.unity
     guid: fe71d18f467bc1b43b217e93450daf16
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 954bcf872313d064e97f58cde6e26995
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 8ca0f56ebf6f10f45b21c985c3d0e9f7
   m_configObjects: {}

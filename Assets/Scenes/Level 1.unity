@@ -1103,6 +1103,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: audios
+      value: 
+      objectReference: {fileID: 878585927}
+    - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: pistola
+      value: 
+      objectReference: {fileID: 8300000, guid: 651872b703419194692f7159d610de20, type: 3}
+    - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: armaVazia
+      value: 
+      objectReference: {fileID: 8300000, guid: 4df53dce30c810443b0f9e9650df8275, type: 3}
+    - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: recarregar
+      value: 
+      objectReference: {fileID: 8300000, guid: adb1d83b014634f41b7517fec90e8fe7, type: 3}
     - target: {fileID: 6454971925037903029, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1572,6 +1588,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!82 &878585927 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6163639592628791031, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+  m_PrefabInstance: {fileID: 370411983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1023000645
 PrefabInstance:
   m_ObjectHideFlags: 0

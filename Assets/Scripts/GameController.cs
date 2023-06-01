@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 
 public class GameController : MonoBehaviour
 {
@@ -12,13 +13,21 @@ public class GameController : MonoBehaviour
     public static GameController instance = null;
     public TextMeshProUGUI LevelTextMeshPro;
     public TextMeshProUGUI LifeTextMeshPro;
+    public TextMeshProUGUI MunicaoTextMeshPro;
     public GameObject player;
 
     private int level = 1;
     private int life = 100;
 
+    private int municao = 15;
+    private int municaoReserva = 30;
+
+    AudioSource somDaPorta;
+
     void Start()
     {
+        somDaPorta = GetComponent<AudioSource>();
+
         if (instance == null)
         {
             instance = this;
@@ -30,8 +39,6 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(pauseMenuCanvas);
         DontDestroyOnLoad(eventSystem);
-
-        LevelTextMeshPro.text = "Level " + level;
     }
 
     void Update()
@@ -62,11 +69,19 @@ public class GameController : MonoBehaviour
         isPuseed = true;
     }
 
+    private void DestroyAll()
+    {
+        Destroy(gameObject);
+        Destroy(pauseMenuCanvas);
+        Destroy(eventSystem);
+    }
+
     public void GoToMenu()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        DestroyAll();
     }
 
     public int getLife()
@@ -81,16 +96,49 @@ public class GameController : MonoBehaviour
         if (life <= 0)
         {
             SceneManager.LoadScene("GameOver");
-            Destroy(gameObject);
-            Destroy(pauseMenuCanvas);
-            Destroy(eventSystem);
+            DestroyAll();
         }
     }
 
-    public void GoToLevel(int newLevel)
+    public int getMunicao()
     {
+        return municao;
+    }
+
+    private void updateMunicaoText()
+    {
+        MunicaoTextMeshPro.text = municao.ToString() + "/" + municaoReserva;
+
+    }
+
+    public void setMunicao(int newMunicao)
+    {
+        municao = newMunicao;
+        updateMunicaoText();
+    }
+
+    public int getMunicaoReserva()
+    {
+        return municaoReserva;
+    }
+
+    public void setMunicaoReserva(int newMunicaoReserva)
+    {
+        municaoReserva = newMunicaoReserva;
+        updateMunicaoText();
+    }
+
+    public void GoToLevel(int newLevel)
+    { 
+        somDaPorta.Play(0);
         level = newLevel;
         SceneManager.LoadScene(level, LoadSceneMode.Single);
         LevelTextMeshPro.text = "Level " + level;
+    }
+
+    public void changeVolume(int newVolume)
+    {
+        Debug.Log(newVolume);
+        somDaPorta.volume = newVolume;
     }
 }

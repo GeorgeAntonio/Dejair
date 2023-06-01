@@ -18,6 +18,10 @@ public class StalkerEnemy : MonoBehaviour
 
     public int vida = 100;
 
+    float delayCalc = 1f;
+    public float dist = 0;
+    bool search = false;
+
     void OnTriggerStay2D(Collider2D other)
     {
         if(other.gameObject.tag == "bullet")
@@ -28,6 +32,10 @@ public class StalkerEnemy : MonoBehaviour
         if(vida < 0)
         {
             Destroy(gameObject);
+            GameController gameController = FindObjectOfType<GameController>();
+            int maisMunicao = Random.Range(5, 7);
+            int municao = gameController.getMunicaoReserva();
+            gameController.setMunicaoReserva(municao + maisMunicao);
         }
     }
     void OnTriggerEnter2D(Collider2D other)
@@ -57,16 +65,23 @@ public class StalkerEnemy : MonoBehaviour
     {
         anim = GetComponent <Animator>();
         anim.SetBool("isRunning", true);
-        Debug.Log( GameObject.FindGameObjectsWithTag("Player").Length != 0 );
+        //Debug.Log( GameObject.FindGameObjectsWithTag("Player").Length != 0 );
         if (GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
             focus = GameObject.FindGameObjectsWithTag("useless")[0];
-            Debug.Log("fodase");
         }
         else
         {
-            anim.SetBool("isRunning", true);
-            if (Time.time - tempo > delay)
+            if(!search && Time.time - tempo > delayCalc)
+            {
+                tempo = Time.time;
+                dist = Mathf.Sqrt( Mathf.Pow((focus.transform.position.x - transform.position.x), 2) + (Mathf.Pow((focus.transform.position.y - transform.position.y), 2)) );
+                if(dist < 20)
+                {
+                    search = true;
+                }
+            }
+            if (search && Time.time - tempo > delay)
             {
                 tempo = Time.time;
                 x = Mathf.Sqrt(Mathf.Pow((focus.transform.position.x - transform.position.x), 2));
@@ -255,7 +270,7 @@ public class StalkerEnemy : MonoBehaviour
                 }
                 /*if (subx < 0)
                 {
-                    flip(); // Chama a função flip se o personagem estiver se movendo para a esquerda
+                    flip(); // Chama a funï¿½ï¿½o flip se o personagem estiver se movendo para a esquerda
                 }*/
                 //Vector2 movimento = new Vector2(transform.position.x + (subx/100), transform.position.y + (suby/100));
                 //Vector2 movimento = new Vector2( subx, suby );
