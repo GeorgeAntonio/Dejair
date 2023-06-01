@@ -30,6 +30,21 @@ public class StalkerEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            anim.SetBool("isAttacking", true);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            anim.SetBool("isAttacking", false);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -238,7 +253,10 @@ public class StalkerEnemy : MonoBehaviour
                         subx = -velocidade;
                     }
                 }
-
+                /*if (subx < 0)
+                {
+                    flip(); // Chama a função flip se o personagem estiver se movendo para a esquerda
+                }*/
                 //Vector2 movimento = new Vector2(transform.position.x + (subx/100), transform.position.y + (suby/100));
                 //Vector2 movimento = new Vector2( subx, suby );
                 transform.Translate(subx / 10, suby / 10, 0);
