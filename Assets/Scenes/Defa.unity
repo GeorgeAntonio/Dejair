@@ -250,7 +250,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15769,6 +15769,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -16208,6 +16212,10 @@ PrefabInstance:
       propertyPath: focus
       value: 
       objectReference: {fileID: 1259095399}
+    - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_SortingOrder
       value: 1

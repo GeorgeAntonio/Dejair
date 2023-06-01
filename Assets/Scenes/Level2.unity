@@ -956,7 +956,7 @@ PrefabInstance:
       objectReference: {fileID: 548027766}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_SortingOrder
@@ -1045,7 +1045,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
@@ -1138,7 +1138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
@@ -1227,7 +1227,7 @@ PrefabInstance:
       objectReference: {fileID: 548027766}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_SortingOrder
@@ -1470,7 +1470,7 @@ PrefabInstance:
       objectReference: {fileID: 548027766}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_SortingOrder
@@ -1952,7 +1952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
@@ -53149,7 +53149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
@@ -53712,7 +53712,7 @@ PrefabInstance:
       objectReference: {fileID: 548027766}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_SortingOrder
@@ -63510,7 +63510,7 @@ PrefabInstance:
       objectReference: {fileID: 548027766}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_SortingOrder
@@ -63996,7 +63996,7 @@ PrefabInstance:
       objectReference: {fileID: 548027766}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_SortingOrder
@@ -64543,7 +64543,7 @@ PrefabInstance:
       objectReference: {fileID: 548027766}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -84639,7 +84639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
@@ -84886,7 +84886,7 @@ PrefabInstance:
       objectReference: {fileID: 548027766}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_SortingOrder
@@ -88743,7 +88743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
@@ -89403,7 +89403,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.4369564, y: -0.3074875}
@@ -89803,7 +89803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
@@ -89896,7 +89896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
@@ -89977,7 +89977,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.79518974, y: 0.42806762}
@@ -90649,7 +90649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5264245030428234074, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8012825102461120115, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_FlipX
