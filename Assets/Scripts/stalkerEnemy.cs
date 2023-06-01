@@ -12,11 +12,17 @@ public class StalkerEnemy : MonoBehaviour
     double x = 0f;
     float y = 0f;
     float tempo = 0f;
+    
+
 
     float subx = 0;
     float suby = 0;
 
     public int vida = 100;
+
+    float delayCalc = 1f;
+    public float dist = 0;
+    bool search = false;
 
     void OnTriggerStay2D(Collider2D other)
     {
@@ -40,15 +46,22 @@ public class StalkerEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log( GameObject.FindGameObjectsWithTag("Player").Length != 0 );
         if (GameObject.FindGameObjectsWithTag("Player").Length == 0)
         {
             focus = GameObject.FindGameObjectsWithTag("useless")[0];
-            Debug.Log("fodase");
         }
         else
         {
-            if (Time.time - tempo > delay)
+            if(!search && Time.time - tempo > delayCalc)
+            {
+                tempo = Time.time;
+                dist = Mathf.Sqrt( Mathf.Pow((focus.transform.position.x - transform.position.x), 2) + (Mathf.Pow((focus.transform.position.y - transform.position.y), 2)) );
+                if(dist < 20)
+                {
+                    search = true;
+                }
+            }
+            if (search && Time.time - tempo > delay)
             {
                 tempo = Time.time;
                 x = Mathf.Sqrt(Mathf.Pow((focus.transform.position.x - transform.position.x), 2));

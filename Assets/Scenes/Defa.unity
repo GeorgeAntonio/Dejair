@@ -1183,6 +1183,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &607802727 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6163639592628791031, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+  m_PrefabInstance: {fileID: 2368554113059250883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619555338
 GameObject:
   m_ObjectHideFlags: 0
@@ -15400,6 +15405,22 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: audios
+      value: 
+      objectReference: {fileID: 607802727}
+    - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: pistola
+      value: 
+      objectReference: {fileID: 8300000, guid: 651872b703419194692f7159d610de20, type: 3}
+    - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: armaVazia
+      value: 
+      objectReference: {fileID: 8300000, guid: 4df53dce30c810443b0f9e9650df8275, type: 3}
+    - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: recarregar
+      value: 
+      objectReference: {fileID: 8300000, guid: adb1d83b014634f41b7517fec90e8fe7, type: 3}
     - target: {fileID: 6454971925037903029, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
       propertyPath: m_RootOrder
       value: 1
