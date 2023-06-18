@@ -1404,6 +1404,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2259751423392754929, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ccee253ff083e9e45ac8d4d553de6318, type: 2}
     - target: {fileID: 1628960916508124237, guid: 0b46e6d3e73576c479b458dabc4fb5fd, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -52237,11 +52241,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 299817777706382694, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
       propertyPath: speed
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 299817777706382694, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
       propertyPath: boostedSpeed
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
       propertyPath: audios
@@ -52252,10 +52256,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 651872b703419194692f7159d610de20, type: 3}
     - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: fireRate
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
       propertyPath: armaVazia
       value: 
       objectReference: {fileID: 8300000, guid: 4df53dce30c810443b0f9e9650df8275, type: 3}
     - target: {fileID: 5449404397278319230, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: recarregar
+      value: 
+      objectReference: {fileID: 8300000, guid: adb1d83b014634f41b7517fec90e8fe7, type: 3}
+    - target: {fileID: 5787332446044590475, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: pistola
+      value: 
+      objectReference: {fileID: 8300000, guid: 537c66ee3ce7088498fcb5dde28b2fd5, type: 3}
+    - target: {fileID: 5787332446044590475, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: fireRate
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787332446044590475, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
+      propertyPath: armaVazia
+      value: 
+      objectReference: {fileID: 8300000, guid: 4df53dce30c810443b0f9e9650df8275, type: 3}
+    - target: {fileID: 5787332446044590475, guid: 1d62998bfbf45e04d92557eacf0d8568, type: 3}
       propertyPath: recarregar
       value: 
       objectReference: {fileID: 8300000, guid: adb1d83b014634f41b7517fec90e8fe7, type: 3}
@@ -89518,7 +89542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focus: {fileID: 429873963}
-  delay: 0.5
+  delay: 10
   velocidade: 5
   vida: 100
   dist: 0
@@ -90120,8 +90144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focus: {fileID: 548027766}
-  delay: 30
-  velocidade: 7
+  delay: 0
+  velocidade: 0.3
   vida: 300
   dist: 0
 --- !u!70 &1745723973
@@ -90171,9 +90195,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -90183,8 +90207,8 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &1745723975
 Animator:

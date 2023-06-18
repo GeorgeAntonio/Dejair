@@ -273,8 +273,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 4690142398357404477}
-  speed: 7
-  boostedSpeed: 25
+  speed: 10
+  boostedSpeed: 50
   vidaHeroi: 100
 --- !u!50 &2217292314619776333
 Rigidbody2D:
