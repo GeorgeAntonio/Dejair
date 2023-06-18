@@ -19,5 +19,10 @@ public class LevelMove_Ref : MonoBehaviour
             GameController gameController = FindObjectOfType<GameController>();
             gameController.GoToLevel(sceneBuildIndex);
         }
+
+        if (other.CompareTag("Jolene"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }

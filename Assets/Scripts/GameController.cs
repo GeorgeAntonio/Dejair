@@ -133,7 +133,14 @@ public class GameController : MonoBehaviour
         somDaPorta.Play(0);
         level = newLevel;
         SceneManager.LoadScene(level, LoadSceneMode.Single);
-        LevelTextMeshPro.text = "Level " + level;
+        if(level == 6)
+        {
+            DestroyAll();
+        } else
+        {
+            LevelTextMeshPro.text = "Level " + level;
+        }
+
     }
 
     public void changeVolume(int newVolume)
